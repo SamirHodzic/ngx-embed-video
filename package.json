@@ -1,29 +1,37 @@
 {
   "name": "ngx-embed-video",
-  "version": "0.1.0",
+  "version": "0.1.6",
   "scripts": {
     "build": "ngc -p tsconfig.json",
-    "lint": "tslint --type-check --project tsconfig.json src/**/*.ts",
+    "lint": "tslint --force --type-check --project tsconfig.json src/*.ts",
     "prepublish": "tsc",
     "tsc": "tsc"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/username/repo"
+    "url": "https://github.com/SamirHodzic/ngx-embed-video"
   },
   "author": {
     "name": "SamirHodzic",
     "email": "samir.sgd@gmail.com"
   },
   "keywords": [
-    "angular"
+    "angular",
+    "angular2",
+    "ng2",
+    "embed-video",
+    "embed",
+    "typescript"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/username/repo/issues"
+    "url": "https://github.com/SamirHodzic/ngx-embed-video/issues"
   },
   "main": "./dist/index.js",
-  "dependencies": {},
+  "peerDependencies": {
+    "@angular/core": "^2.0.0",
+    "@angular/http": "^2.0.0"
+  },
   "devDependencies": {
     "@angular/common": "^2.4.10",
     "@angular/compiler": "^2.4.10",
@@ -36,7 +44,8 @@
     "rxjs": "^5.2.0",
     "tslint": "^4.5.1",
     "typescript": "^2.2.1",
-    "@types/es6-shim": "^0.31.32"
+    "@types/es6-shim": "^0.31.32",
+    "zone.js": "^0.7.2"
   },
   "engines": {
     "node": ">=0.8.0"

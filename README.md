@@ -1,10 +1,12 @@
 # ngx-embed-video
 
-![build-url][build-url]
-[![Dev Dependencies][dev-dependencies]][dev-dependencies-url]
-
-> Get embed code for embedding youtube/vimeo/dailymotion/* video in websites from URL or ID.
+> Get embed code for embedding youtube/vimeo/dailymotion/* video in websites from URL or ID in Angular 2.
 > Currently supports YouTube, Vimeo and Dailymotion. Feel free to make pull request to add others!
+
+[![build-url][build-url-svg]][build-url]
+[![npm-url][npm-url]][npm-url]
+[![Dev Dependencies][dev-dependencies]][dev-dependencies-url]
+[![Dependencies][dependencies]][dependencies-url]
 
 ## Installation
 
@@ -19,12 +21,13 @@ $ npm install ngx-embed-video --save
 and then in your Angular `AppModule`:
 
 ```typescript
-import { NgModule } from '@angular/core';
-// Import library
+import { HttpModule } from '@angular/http';
 import { EmbedVideo } from 'ngx-embed-video';
 
 @NgModule({
   imports: [
+		HttpModule,
+
 		EmbedVideo.forRoot()
   ]
 })
@@ -185,6 +188,10 @@ this.embedService.embed_image('https://www.dailymotion.com/embed/video/x20qnej',
 MIT - [SamirH](mailto:samir.sgd@gmail.com)
 
 
-[build-url]: https://travis-ci.org/SamirHodzic/ngx-embed-video.svg?branch=master
+[build-url]: https://travis-ci.org/SamirHodzic/ngx-embed-video
+[build-url-svg]: https://travis-ci.org/SamirHodzic/ngx-embed-video.svg?branch=master
+[dependencies]: https://david-dm.org/samirhodzic/ngx-embed-video.svg
+[dependencies-url]: https://david-dm.org/samirhodzic/ngx-embed-video
 [dev-dependencies]: https://david-dm.org/samirhodzic/ngx-embed-video/dev-status.svg
 [dev-dependencies-url]: https://david-dm.org/samirhodzic/ngx-embed-video?type=dev
+[npm-url]: https://badge.fury.io/js/ngx-embed-video.svg

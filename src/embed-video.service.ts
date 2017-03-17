@@ -37,21 +37,27 @@ export class EmbedVideoService {
 		url = new URL(url);
 
 		id = this.detectYoutube(url);
-		if (id) return this.embed_youtube(id, options);
+		if (id) {
+			return this.embed_youtube(id, options);
+		}
 
 		id = this.detectVimeo(url);
-		if (id) return this.embed_vimeo(id, options);
+		if (id) {
+			return this.embed_vimeo(id, options);
+		}
 
 		id = this.detectDailymotion(url);
-		if (id) return this.embed_dailymotion(id, options);
+		if (id) {
+			return this.embed_dailymotion(id, options);
+		}
 	}
 
 	public embed_youtube(id: string, options?: any): string {
 		options = this.parseOptions(options);
-		var queryString;
+		let queryString;
 
 		if (options && options.hasOwnProperty('query')) {
-			queryString = "?" + this.serializeQuery(options.query);
+			queryString = '?' + this.serializeQuery(options.query);
 		}
 
 		return '<iframe src="//www.youtube.com/embed/'
@@ -61,10 +67,10 @@ export class EmbedVideoService {
 
 	public embed_vimeo(id: string, options?: any): string {
 		options = this.parseOptions(options);
-		var queryString;
+		let queryString;
 
 		if (options && options.hasOwnProperty('query')) {
-			queryString = "?" + this.serializeQuery(options.query);
+			queryString = '?' + this.serializeQuery(options.query);
 		}
 
 		return '<iframe src="//player.vimeo.com/video/'
@@ -74,10 +80,10 @@ export class EmbedVideoService {
 
 	public embed_dailymotion(id: string, options?: any): string {
 		options = this.parseOptions(options);
-		var queryString;
+		let queryString;
 
 		if (options && options.hasOwnProperty('query')) {
-			queryString = "?" + this.serializeQuery(options.query);
+			queryString = '?' + this.serializeQuery(options.query);
 		}
 
 		return '<iframe src="//www.dailymotion.com/embed/video/'
@@ -86,34 +92,40 @@ export class EmbedVideoService {
 	}
 
 	public embed_image(url: any, options?: any): any {
-		var id;
+		let id;
 
 		url = new URL(url);
 
 		id = this.detectYoutube(url);
-		if (id) return this.embed_youtube_image(id, options);
+		if (id) {
+			return this.embed_youtube_image(id, options);
+		}
 
 		id = this.detectVimeo(url);
-		if (id) return this.embed_vimeo_image(id, options);
+		if (id) {
+			return this.embed_vimeo_image(id, options);
+		}
 
 		id = this.detectDailymotion(url);
-		if (id) return this.embed_dailymotion_image(id, options);
+		if (id) {
+			return this.embed_dailymotion_image(id, options);
+		}
 	}
 
 	private embed_youtube_image(id: string, options?: any): any {
 		if (typeof options === 'function') {
-			options = {}
+			options = {};
 		}
 		options = options || {};
 
-		options.image = this.validYouTubeOptions.indexOf(options.image) > 0 ? options.image : 'default'
+		options.image = this.validYouTubeOptions.indexOf(options.image) > 0 ? options.image : 'default';
 
-		var src = '//img.youtube.com/vi/' + id + '/' + options.image + '.jpg'
+		let src = '//img.youtube.com/vi/' + id + '/' + options.image + '.jpg';
 
-		var result = {
+		let result = {
 			link: src,
 			html: '<img src="' + src + '"/>'
-		}
+		};
 
 		return new Promise((resolve, reject) => {
 			resolve(result);
@@ -129,12 +141,12 @@ export class EmbedVideoService {
 
 		options.image = this.validVimeoOptions.indexOf(options.image) >= 0 ? options.image : 'thumbnail_large';
 
-		return this.http.get("https://vimeo.com/api/v2/video/" + id + ".json")
+		return this.http.get('https://vimeo.com/api/v2/video/' + id + '.json')
 			.map(res => {
 				return {
-					"link": res.json()[0][options.image],
-					"html": '<img src="' + res.json()[0][options.image] + '"/>'
-				}
+					'link': res.json()[0][options.image],
+					'html': '<img src="' + res.json()[0][options.image] + '"/>'
+				};
 			})
 			.toPromise()
 			.catch(error => console.log(error));
@@ -149,27 +161,27 @@ export class EmbedVideoService {
 
 		options.image = this.validDailyMotionOptions.indexOf(options.image) >= 0 ? options.image : 'thumbnail_480_url';
 
-		return this.http.get("https://api.dailymotion.com/video/" + id + "?fields=" + options.image)
+		return this.http.get('https://api.dailymotion.com/video/' + id + '?fields=' + options.image)
 			.map(res => {
 				return {
-					"link": res.json()[options.image],
-					"html": '<img src="' + res.json()[options.image] + '"/>'
-				}
+					'link': res.json()[options.image],
+					'html': '<img src="' + res.json()[options.image] + '"/>'
+				};
 			})
 			.toPromise()
 			.catch(error => console.log(error));
 	}
 
 	private parseOptions(options: any): any {
-		var queryString = '',
+		let queryString = '',
 			attributes = '';
 
 		if (options && options.hasOwnProperty('query')) {
-			queryString = "?" + this.serializeQuery(options.query);
+			queryString = '?' + this.serializeQuery(options.query);
 		}
 
 		if (options && options.hasOwnProperty('attr')) {
-			var temp = <any>[];
+			let temp = <any>[];
 
 			Object.keys(options.attr).forEach(function (key) {
 				temp.push(key + '="' + (options.attr[key]) + '"');
@@ -184,40 +196,40 @@ export class EmbedVideoService {
 	}
 
 	private serializeQuery(query: any): any {
-		var queryString = [];
+		let queryString = [];
 
-		for (var p in query) {
+		for (let p in query) {
 			if (query.hasOwnProperty(p)) {
-				queryString.push(encodeURIComponent(p) + "=" + encodeURIComponent(query[p]));
+				queryString.push(encodeURIComponent(p) + '=' + encodeURIComponent(query[p]));
 			}
 		}
 
-		return queryString.join("&");
+		return queryString.join('&');
 	}
 
 	private detectVimeo(url: any): string {
-		return (url.hostname == "vimeo.com") ? url.pathname.split("/")[1] : null;
+		return (url.hostname === 'vimeo.com') ? url.pathname.split('/')[1] : null;
 	}
 
 	private detectYoutube(url: any): string {
-		if (url.hostname.indexOf("youtube.com") > -1) {
-			return url.search.split("=")[1];
+		if (url.hostname.indexOf('youtube.com') > -1) {
+			return url.search.split('=')[1];
 		}
 
-		if (url.hostname == "youtu.be") {
-			return url.pathname.split("/")[1];
+		if (url.hostname === 'youtu.be') {
+			return url.pathname.split('/')[1];
 		}
 
 		return null;
 	}
 
 	private detectDailymotion(url: any): string {
-		if (url.hostname.indexOf("dailymotion.com") > -1) {
-			return url.pathname.split("/")[2].split("_")[0];
+		if (url.hostname.indexOf('dailymotion.com') > -1) {
+			return url.pathname.split('/')[2].split('_')[0];
 		}
 
-		if (url.hostname === "dai.ly") {
-			return url.pathname.split("/")[1];
+		if (url.hostname === 'dai.ly') {
+			return url.pathname.split('/')[1];
 		}
 
 		return null;
