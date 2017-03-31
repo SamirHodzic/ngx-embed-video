@@ -4,7 +4,7 @@
 > Currently supports YouTube, Vimeo and Dailymotion. Feel free to make pull request to add others!
 
 [![build-url][build-url-svg]][build-url]
-[![npm-url][npm-url]][npm-url]
+[![npm-url][npm-url-svg]][npm-url]
 [![Dev Dependencies][dev-dependencies]][dev-dependencies-url]
 [![Dependencies][dependencies]][dependencies-url]
 
@@ -179,7 +179,7 @@ this.embedService.embed_image('https://vimeo.com/197933516', { image: 'thumbnail
 * thumbnail_1080_url
 
 ```js
-this.embedService.embed_image('https://www.dailymotion.com/embed/video/x20qnej', { image: 'thumbnail_720_url' })
+this.embedService.embed_image('https://www.dailymotion.com/video/x20qnej_red-bull-presents-wild-ride-bmx-mtb-dirt_sport', { image: 'thumbnail_720_url' })
 ```
 
 
@@ -194,4 +194,5 @@ MIT - [SamirH](mailto:samir.sgd@gmail.com)
 [dependencies-url]: https://david-dm.org/samirhodzic/ngx-embed-video
 [dev-dependencies]: https://david-dm.org/samirhodzic/ngx-embed-video/dev-status.svg
 [dev-dependencies-url]: https://david-dm.org/samirhodzic/ngx-embed-video?type=dev
-[npm-url]: https://badge.fury.io/js/ngx-embed-video.svg
+[npm-url-svg]: https://badge.fury.io/js/ngx-embed-video.svg
+[npm-url]: https://www.npmjs.com/package/ngx-embed-video
