@@ -5,6 +5,7 @@
 
 [![build-url][build-url-svg]][build-url]
 [![npm-url][npm-url-svg]][npm-url]
+[![npm-url][down-url-svg]][npm-url]
 [![Dev Dependencies][dev-dependencies]][dev-dependencies-url]
 [![Dependencies][dependencies]][dependencies-url]
 
@@ -190,6 +191,7 @@ MIT - [SamirH](mailto:samir.sgd@gmail.com)
 
 [build-url]: https://travis-ci.org/SamirHodzic/ngx-embed-video
 [build-url-svg]: https://travis-ci.org/SamirHodzic/ngx-embed-video.svg?branch=master
+[down-url-svg]: https://img.shields.io/npm/dt/ngx-embed-video.svg
 [dependencies]: https://david-dm.org/samirhodzic/ngx-embed-video.svg
 [dependencies-url]: https://david-dm.org/samirhodzic/ngx-embed-video
 [dev-dependencies]: https://david-dm.org/samirhodzic/ngx-embed-video/dev-status.svg
