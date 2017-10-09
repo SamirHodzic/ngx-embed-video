@@ -27,9 +27,9 @@ import { EmbedVideo } from 'ngx-embed-video';
 
 @NgModule({
   imports: [
-		HttpModule,
+    HttpModule,
 
-		EmbedVideo.forRoot()
+    EmbedVideo.forRoot()
   ]
 })
 export class AppModule {}
@@ -44,31 +44,29 @@ import { Component } from '@angular/core';
 import { EmbedVideoService } from 'ngx-embed-video';
 
 @Component({
-	selector: 'app-component',
-	templateUrl: './template.html',
+  selector: 'app-component',
+  templateUrl: './template.html',
 })
 export class AppComponent {
+  vimeoUrl = "https://vimeo.com/197933516";
+  youtubeUrl = "https://www.youtube.com/watch?v=iHhcHTlGtRs";
+  dailymotionUrl = "https://www.dailymotion.com/video/x20qnej_red-bull-presents-wild-ride-bmx-mtb-dirt_sport";
 
-	vimeoUrl = "https://vimeo.com/197933516";
-	youtubeUrl = "https://www.youtube.com/watch?v=iHhcHTlGtRs";
-	dailymotionUrl = "https://www.dailymotion.com/video/x20qnej_red-bull-presents-wild-ride-bmx-mtb-dirt_sport";
+  vimeoId = "197933516";
+  youtubeId = "iHhcHTlGtRs";
+  dailymotionId = "x20qnej";
 
-	vimeoId = "197933516";
-	youtubeId = "iHhcHTlGtRs";
-	dailymotionId = "x20qnej";
+  constructor(
+    private embedService: EmbedVideoService
+  ) {
+    console.log(this.embedService.embed(vimeoUrl));
+    console.log(this.embedService.embed(youtubeUrl));
+    console.log(this.embedService.embed(dailymotionUrl));
 
-	constructor(
-		private embedService: EmbedVideoService
-	) {
-		console.log(this.embedService.embed(vimeoUrl));
-		console.log(this.embedService.embed(youtubeUrl));
-		console.log(this.embedService.embed(dailymotionUrl));
-
-		console.log(this.embedService.embed_vimeo(vimeoId));
-		console.log(this.embedService.embed_youtube(youtubeId));
-		console.log(this.embedService.embed_dailymotion(dailymotionId));
-	}
-
+    console.log(this.embedService.embed_vimeo(vimeoId));
+    console.log(this.embedService.embed_youtube(youtubeId));
+    console.log(this.embedService.embed_dailymotion(dailymotionId));
+  }
 }
 ```
 
@@ -123,7 +121,7 @@ Object to be serialized as a querystring and appended to the embedded content ur
 #### Example
 
 ```js
-console.log(this.embedService.embed_vimeo("197933516", { query: { portrait: 0, color: '333' } }))
+this.embedService.embed_vimeo("197933516", { query: { portrait: 0, color: '333' } })
 ```
 
 Output:
@@ -138,7 +136,7 @@ Object to add additional attributes (any) to the iframe
 #### Example
 
 ```js
-console.log(this.embedService.embed('https://youtu.be/iHhcHTlGtRs', { query: { portrait: 0, color: '333' }, attr: { width: 400, height: 200 } }))
+this.embedService.embed('https://youtu.be/iHhcHTlGtRs', { query: { portrait: 0, color: '333' }, attr: { width: 400, height: 200 } })
 ```
 
 Output:
