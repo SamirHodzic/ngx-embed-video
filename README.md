@@ -1,6 +1,6 @@
 # ngx-embed-video
 
-> Get embed code for embedding youtube/vimeo/dailymotion/* video in websites from URL or ID in Angular 2.
+> Get embed code for embedding youtube/vimeo/dailymotion/* video in websites from URL or ID in Angular 4.
 > Currently supports YouTube, Vimeo and Dailymotion. Feel free to make pull request to add others!
 
 [![build-url][build-url-svg]][build-url]
@@ -81,6 +81,29 @@ Example output:
 <iframe src="//www.youtube.com/embed/iHhcHTlGtRs" frameborder="0" allowfullscreen></iframe>
 <iframe src="//www.dailymotion.com/embed/video/x20qnej" frameborder="0" allowfullscreen></iframe>
 ```
+
+Example usage with sanitized innerHtml iframe:
+
+```typescript
+import { Component } from '@angular/core';
+import { EmbedVideoService } from 'ngx-embed-video';
+
+@Component({
+  selector: 'app-component',
+  template: '<div [innerHtml]="iframe_html"></div>',
+})
+export class AppComponent {
+  iframe_html: any;
+  youtubeUrl = "https://www.youtube.com/watch?v=iHhcHTlGtRs";
+
+  constructor(
+    private embedService: EmbedVideoService
+  ) {
+    this.iframe_html = this.embedService.embed(youtubeUrl);
+  )
+}
+```
+
 
 ## Usage
 

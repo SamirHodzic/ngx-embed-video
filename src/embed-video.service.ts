@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
+import { DomSanitizer } from '@angular/platform-browser';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
 
@@ -29,7 +30,8 @@ export class EmbedVideoService {
 	];
 
 	constructor(
-		private http: Http
+		private http: Http,
+		private sanitizer: DomSanitizer
 	) { }
 
 	public embed(url: any, options?: any): any {
@@ -38,17 +40,17 @@ export class EmbedVideoService {
 
 		id = this.detectYoutube(url);
 		if (id) {
-			return this.embed_youtube(id, options);
+			return this.sanitize_iframe(this.embed_youtube(id, options));
 		}
 
 		id = this.detectVimeo(url);
 		if (id) {
-			return this.embed_vimeo(id, options);
+			return this.sanitize_iframe(this.embed_vimeo(id, options));
 		}
 
 		id = this.detectDailymotion(url);
 		if (id) {
-			return this.embed_dailymotion(id, options);
+			return this.sanitize_iframe(this.embed_dailymotion(id, options));
 		}
 	}
 
@@ -205,6 +207,10 @@ export class EmbedVideoService {
 		}
 
 		return queryString.join('&');
+	}
+
+	private sanitize_iframe(iframe: string): any {
+		return this.sanitizer.bypassSecurityTrustHtml(iframe);
 	}
 
 	private detectVimeo(url: any): string {
