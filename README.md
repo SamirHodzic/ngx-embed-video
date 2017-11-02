@@ -143,7 +143,7 @@ Object to be serialized as a querystring and appended to the embedded content ur
 
 #### Example
 
-```js
+```typescript
 this.embedService.embed_vimeo("197933516", { query: { portrait: 0, color: '333' } })
 ```
 
@@ -158,7 +158,7 @@ Object to add additional attributes (any) to the iframe
 
 #### Example
 
-```js
+```typescript
 this.embedService.embed('https://youtu.be/iHhcHTlGtRs', { query: { portrait: 0, color: '333' }, attr: { width: 400, height: 200 } })
 ```
 
@@ -175,7 +175,7 @@ Output:
 * sddefault
 * maxresdefault
 
-```js
+```typescript
 this.embedService.embed_image('https://www.youtube.com/watch?v=iHhcHTlGtRs', { image: 'mqdefault' })
 ```
 
@@ -185,7 +185,7 @@ this.embedService.embed_image('https://www.youtube.com/watch?v=iHhcHTlGtRs', { i
 * thumbnail_medium
 * thumbnail_large
 
-```js
+```typescript
 this.embedService.embed_image('https://vimeo.com/197933516', { image: 'thumbnail_medium' })
 ```
 
@@ -200,7 +200,7 @@ this.embedService.embed_image('https://vimeo.com/197933516', { image: 'thumbnail
 * thumbnail_720_url
 * thumbnail_1080_url
 
-```js
+```typescript
 this.embedService.embed_image('https://www.dailymotion.com/video/x20qnej_red-bull-presents-wild-ride-bmx-mtb-dirt_sport', { image: 'thumbnail_720_url' })
 ```
 
