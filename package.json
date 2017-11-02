@@ -3,7 +3,7 @@
   "version": "0.1.8",
   "scripts": {
     "build": "ngc -p tsconfig.json",
-    "lint": "tslint --force --type-check --project tsconfig.json src/*.ts",
+    "lint": "tslint --force --project tsconfig.json src/*.ts",
     "prepublish": "tsc",
     "tsc": "tsc"
   },
