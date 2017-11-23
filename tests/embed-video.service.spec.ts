@@ -17,7 +17,7 @@ describe('EmbedVideoService', () => {
     });
   });
 
-  it('service should be defined',
+  it('is defined',
     inject([EmbedVideoService], (embedVideoService) => {
 
       expect(embedVideoService).toBeDefined();
