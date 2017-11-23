@@ -1,11 +1,7 @@
 # Node
 node_modules/*
 npm-debug.log
-
-# TypeScript
-*.js
-*.map
-*.d.ts
+dist
 
 # JetBrains
 .idea
