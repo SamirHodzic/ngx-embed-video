@@ -198,7 +198,7 @@ export class EmbedVideoService {
   }
 
   private serializeQuery(query: any): any {
-    let queryString = [];
+    let queryString: any = [];
 
     for (let p in query) {
       if (query.hasOwnProperty(p)) {
@@ -226,7 +226,7 @@ export class EmbedVideoService {
       return url.pathname.split('/')[1];
     }
 
-    return null;
+    return '';
   }
 
   private detectDailymotion(url: any): string {
@@ -238,6 +238,6 @@ export class EmbedVideoService {
       return url.pathname.split('/')[1];
     }
 
-    return null;
+    return '';
   }
 }

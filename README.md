@@ -6,7 +6,6 @@
 [![npm-url][npm-url-svg]][npm-url]
 [![npm-url][down-url-svg]][npm-url]
 [![build-url][build-url-svg]][build-url]
-[![Dev Dependencies][dev-dependencies]][dev-dependencies-url]
 [![Dependencies][dependencies]][dependencies-url]
 
 ## Installation
@@ -215,7 +214,5 @@ MIT - [SamirH](mailto:samir.sgd@gmail.com)
 [down-url-svg]: https://img.shields.io/npm/dt/ngx-embed-video.svg
 [dependencies]: https://david-dm.org/samirhodzic/ngx-embed-video.svg
 [dependencies-url]: https://david-dm.org/samirhodzic/ngx-embed-video
-[dev-dependencies]: https://david-dm.org/samirhodzic/ngx-embed-video/dev-status.svg
-[dev-dependencies-url]: https://david-dm.org/samirhodzic/ngx-embed-video?type=dev
 [npm-url-svg]: https://img.shields.io/npm/v/ngx-embed-video.svg
 [npm-url]: https://www.npmjs.com/package/ngx-embed-video
