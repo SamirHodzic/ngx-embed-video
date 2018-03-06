@@ -5,6 +5,7 @@
     "build": "ngc -p tsconfig.json",
     "lint": "tslint --force --project tsconfig.json src/*.ts",
     "prepublish": "tsc",
+    "prepare": "tsc",
     "tsc": "tsc",
     "test": "karma start"
   },
