@@ -62,7 +62,7 @@ export class EmbedVideoService {
       queryString = '?' + this.serializeQuery(options.query);
     }
 
-    return this.sanitize_iframe('<iframe src="//www.youtube.com/embed/'
+    return this.sanitize_iframe('<iframe src="https://www.youtube.com/embed/'
       + id + options.query + '"' + options.attr
       + ' frameborder="0" allowfullscreen></iframe>');
   }
@@ -75,7 +75,7 @@ export class EmbedVideoService {
       queryString = '?' + this.serializeQuery(options.query);
     }
 
-    return this.sanitize_iframe('<iframe src="//player.vimeo.com/video/'
+    return this.sanitize_iframe('<iframe src="https://player.vimeo.com/video/'
       + id + options.query + '"' + options.attr
       + ' frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
   }
@@ -88,7 +88,7 @@ export class EmbedVideoService {
       queryString = '?' + this.serializeQuery(options.query);
     }
 
-    return this.sanitize_iframe('<iframe src="//www.dailymotion.com/embed/video/'
+    return this.sanitize_iframe('<iframe src="https://www.dailymotion.com/embed/video/'
       + id + options.query + '"' + options.attr
       + ' frameborder="0" allowfullscreen></iframe>');
   }
@@ -122,7 +122,7 @@ export class EmbedVideoService {
 
     options.image = this.validYouTubeOptions.indexOf(options.image) > 0 ? options.image : 'default';
 
-    let src = '//img.youtube.com/vi/' + id + '/' + options.image + '.jpg';
+    let src = 'https://img.youtube.com/vi/' + id + '/' + options.image + '.jpg';
 
     let result = {
       link: src,
