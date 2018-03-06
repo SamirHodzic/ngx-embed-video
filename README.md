@@ -72,13 +72,13 @@ export class AppComponent {
 Example output:
 
 ```html
-<iframe src="//player.vimeo.com/video/197933516" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-<iframe src="//www.youtube.com/embed/iHhcHTlGtRs" frameborder="0" allowfullscreen></iframe>
-<iframe src="//www.dailymotion.com/embed/video/x20qnej" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://player.vimeo.com/video/197933516" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/iHhcHTlGtRs" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://www.dailymotion.com/embed/video/x20qnej" frameborder="0" allowfullscreen></iframe>
 
-<iframe src="//player.vimeo.com/video/197933516" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-<iframe src="//www.youtube.com/embed/iHhcHTlGtRs" frameborder="0" allowfullscreen></iframe>
-<iframe src="//www.dailymotion.com/embed/video/x20qnej" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://player.vimeo.com/video/197933516" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/iHhcHTlGtRs" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://www.dailymotion.com/embed/video/x20qnej" frameborder="0" allowfullscreen></iframe>
 ```
 
 Example usage with sanitized innerHtml iframe:
@@ -149,7 +149,7 @@ this.embedService.embed_vimeo("197933516", { query: { portrait: 0, color: '333' 
 Output:
 
 ```html
-<iframe src="//player.vimeo.com/video/197933516?portrait=0&color=333" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe src="https://player.vimeo.com/video/197933516?portrait=0&color=333" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 ```
 ### attributes
 
@@ -163,7 +163,7 @@ this.embedService.embed('https://youtu.be/iHhcHTlGtRs', { query: { portrait: 0, 
 
 Output:
 ```html
-<iframe src="//www.youtube.com/embed/iHhcHTlGtRs?portrait=0&color=333" frameborder="0" allowfullscreen width="400" height="200"></iframe>
+<iframe src="https://www.youtube.com/embed/iHhcHTlGtRs?portrait=0&color=333" frameborder="0" allowfullscreen width="400" height="200"></iframe>
 ```
 
 #### Youtube Image options
