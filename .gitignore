@@ -23,3 +23,7 @@ Desktop.ini
 
 # Ngc generated files
 **/*.ngfactory.ts
+**/*.ngsummary.json
+
+# Ng packagr directory
+.ng_pkg_build

@@ -3,6 +3,7 @@
   "version": "0.3.0",
   "scripts": {
     "build": "ngc -p tsconfig.json",
+    "build:lib": "ng-packagr -p package.json",
     "lint": "tslint --force --project tsconfig.json src/*.ts",
     "prepublish": "tsc",
     "tsc": "tsc",
@@ -36,19 +37,20 @@
   },
   "main": "./dist/index.js",
   "peerDependencies": {
-    "@angular/core": "^4.0.0",
-    "@angular/http": "^4.0.0"
+    "@angular/core": "^4.4.6",
+    "@angular/http": "^4.4.6"
   },
   "devDependencies": {
-    "@angular/common": "^4.0.0",
-    "@angular/compiler": "^4.0.0",
-    "@angular/compiler-cli": "^4.0.0",
-    "@angular/core": "^4.0.0",
-    "@angular/http": "^4.0.0",
-    "@angular/platform-browser": "^4.0.0",
-    "@angular/platform-browser-dynamic": "^4.0.0",
-    "@angular/platform-server": "^4.0.0",
+    "@angular/common": "^4.4.6",
+    "@angular/compiler": "^4.4.6",
+    "@angular/compiler-cli": "^4.4.6",
+    "@angular/core": "^4.4.6",
+    "@angular/http": "^4.4.6",
+    "@angular/platform-browser": "^4.4.6",
+    "@angular/platform-browser-dynamic": "^4.4.6",
+    "@angular/platform-server": "^4.4.6",
     "@types/jasmine": "^2.8.2",
+    "codelyzer": "^3.2.1",
     "core-js": "^2.4.1",
     "jasmine-core": "^2.8.0",
     "karma": "^1.7.0",
@@ -57,14 +59,19 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-spec-reporter": "^0.0.31",
     "karma-webpack": "^2.0.6",
-    "codelyzer": "^3.2.1",
+    "ng-packagr": "1.6.0",
     "rxjs": "^5.2.0",
-    "tslint": "^5.7.0",
-    "typescript": "^2.2.1",
     "ts-helpers": "^1.1.2",
     "ts-loader": "^2.0.3",
-    "zone.js": "^0.8.14",
-    "webpack": "^2.3.1"
+    "tslint": "^5.7.0",
+    "typescript": "^2.2.1",
+    "webpack": "^2.3.1",
+    "zone.js": "^0.8.14"
+  },
+  "ngPackage": {
+    "lib": {
+      "entryFile": "index.ts"
+    }
   },
   "engines": {
     "node": ">=0.8.0"
