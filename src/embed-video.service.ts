@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { HttpClient} from '@angular/common/http';
 import { DomSanitizer } from '@angular/platform-browser';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
@@ -30,7 +30,7 @@ export class EmbedVideoService {
   ];
 
   constructor(
-    private http: Http,
+    private http: HttpClient,
     private sanitizer: DomSanitizer
   ) { }
 
@@ -146,8 +146,8 @@ export class EmbedVideoService {
     return this.http.get('https://vimeo.com/api/v2/video/' + id + '.json')
       .map(res => {
         return {
-          'link': res.json()[0][options.image],
-          'html': '<img src="' + res.json()[0][options.image] + '"/>'
+          'link': res[0][options.image],
+          'html': '<img src="' + res[0][options.image] + '"/>'
         };
       })
       .toPromise()
@@ -166,8 +166,8 @@ export class EmbedVideoService {
     return this.http.get('https://api.dailymotion.com/video/' + id + '?fields=' + options.image)
       .map(res => {
         return {
-          'link': res.json()[options.image],
-          'html': '<img src="' + res.json()[options.image] + '"/>'
+          'link': res[options.image],
+          'html': '<img src="' + res[options.image] + '"/>'
         };
       })
       .toPromise()
