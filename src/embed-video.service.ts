@@ -64,7 +64,7 @@ export class EmbedVideoService {
 
     return this.sanitize_iframe('<iframe src="https://www.youtube.com/embed/'
       + id + options.query + '"' + options.attr
-      + ' frameborder="0" allowfullscreen></iframe>');
+      + ' class = " +options.class+" frameborder="0" allowfullscreen></iframe>');
   }
 
   public embed_vimeo(id: string, options?: any): string {
@@ -176,10 +176,15 @@ export class EmbedVideoService {
 
   private parseOptions(options: any): any {
     let queryString = '',
-      attributes = '';
+      attributes = '',
+      iframe_class = '';
 
     if (options && options.hasOwnProperty('query')) {
       queryString = '?' + this.serializeQuery(options.query);
+    }
+    
+    if (options && options.hasOwnProperty('iframe_class')) {
+      iframe_class = this.serializeQuery(options.iframe_class);
     }
 
     if (options && options.hasOwnProperty('attr')) {
@@ -194,6 +199,7 @@ export class EmbedVideoService {
     return {
       query: queryString,
       attr: attributes
+      iframe_class: iframe_class
     };
   }
 
