@@ -1,14 +1,14 @@
 import {async, inject, TestBed} from '@angular/core/testing';
-import {HttpModule} from '@angular/http';
 import {DomSanitizer} from '@angular/platform-browser';
 
 import {EmbedVideoService} from '../src/embed-video.service';
+import {HttpClientModule} from '@angular/common/http';
 
 describe('EmbedVideoService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
-        HttpModule
+        HttpClientModule
       ],
       providers: [
         EmbedVideoService

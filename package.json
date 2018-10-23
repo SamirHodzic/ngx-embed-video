@@ -1,6 +1,6 @@
 {
   "name": "ngx-embed-video",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "scripts": {
     "build": "ngc -p tsconfig.json",
     "lint": "tslint --force --project tsconfig.json src/*.ts",
@@ -36,8 +36,8 @@
   },
   "main": "./dist/index.js",
   "peerDependencies": {
-    "@angular/core": "^6.1.10",
-    "@angular/http": "^6.1.10"
+    "@angular/core": "^6.0.0",
+    "@angular/common": "^6.0.0"
   },
   "devDependencies": {
     "@angular/common": "^6.1.10",
@@ -69,8 +69,5 @@
   },
   "engines": {
     "node": ">=0.8.0"
-  },
-  "dependencies": {
-    "4": "0.0.0"
   }
 }
