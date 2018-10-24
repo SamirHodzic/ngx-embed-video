@@ -1,6 +1,6 @@
 # ngx-embed-video
 
-> Get embed code for embedding youtube/vimeo/dailymotion/* video in websites from URL or ID in Angular 4.
+> Get embed code for embedding youtube/vimeo/dailymotion/* video in websites from URL or ID in Angular 6+.
 > Currently supports YouTube, Vimeo and Dailymotion. Feel free to make pull request to add others!
 
 [![npm-url][npm-url-svg]][npm-url]
@@ -21,13 +21,10 @@ $ npm install ngx-embed-video --save
 and then in your Angular `AppModule`:
 
 ```typescript
-import { HttpModule } from '@angular/http';
 import { EmbedVideo } from 'ngx-embed-video';
 
 @NgModule({
   imports: [
-    HttpModule,
-
     EmbedVideo.forRoot()
   ]
 })
@@ -58,13 +55,13 @@ export class AppComponent {
   constructor(
     private embedService: EmbedVideoService
   ) {
-    console.log(this.embedService.embed(vimeoUrl));
-    console.log(this.embedService.embed(youtubeUrl));
-    console.log(this.embedService.embed(dailymotionUrl));
+    console.log(this.embedService.embed(this.vimeoUrl));
+    console.log(this.embedService.embed(this.youtubeUrl));
+    console.log(this.embedService.embed(this.dailymotionUrl));
 
-    console.log(this.embedService.embed_vimeo(vimeoId));
-    console.log(this.embedService.embed_youtube(youtubeId));
-    console.log(this.embedService.embed_dailymotion(dailymotionId));
+    console.log(this.embedService.embed_vimeo(this.vimeoId));
+    console.log(this.embedService.embed_youtube(this.youtubeId));
+    console.log(this.embedService.embed_dailymotion(this.dailymotionId));
   }
 }
 ```
@@ -206,7 +203,7 @@ this.embedService.embed_image('https://www.dailymotion.com/video/x20qnej_red-bul
 
 ## License
 
-MIT - [SamirH](mailto:samir.sgd@gmail.com)
+MIT
 
 
 [build-url]: https://travis-ci.org/SamirHodzic/ngx-embed-video
