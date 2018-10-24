@@ -1,15 +1,14 @@
-import { async, inject, TestBed } from '@angular/core/testing';
-import { HttpModule } from '@angular/http';
-import { DomSanitizer } from '@angular/platform-browser';
+import {async, inject, TestBed} from '@angular/core/testing';
+import {DomSanitizer} from '@angular/platform-browser';
 
-import { EmbedVideoService } from '../src/embed-video.service';
-import { ReplaySubject } from 'rxjs/ReplaySubject';
+import {EmbedVideoService} from '../src/embed-video.service';
+import {HttpClientModule} from '@angular/common/http';
 
 describe('EmbedVideoService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
-        HttpModule
+        HttpClientModule
       ],
       providers: [
         EmbedVideoService
@@ -90,7 +89,7 @@ describe('EmbedVideoService', () => {
   it('accepts query param youtube',
     inject([EmbedVideoService, DomSanitizer], (embedVideoService, sanitizer) => {
 
-      expect(embedVideoService.embed_youtube('9XeNNqeHVDw', { query: { rel: 0, showinfo: 0 } })).toEqual(
+      expect(embedVideoService.embed_youtube('9XeNNqeHVDw', {query: {rel: 0, showinfo: 0}})).toEqual(
         sanitizer.bypassSecurityTrustHtml('<iframe src="https://www.youtube.com/embed/9XeNNqeHVDw?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>')
       )
     }));
@@ -98,7 +97,7 @@ describe('EmbedVideoService', () => {
   it('accepts attributes youtube',
     inject([EmbedVideoService, DomSanitizer], (embedVideoService, sanitizer) => {
 
-      expect(embedVideoService.embed_youtube('9XeNNqeHVDw', { query: { rel: 0, showinfo: 0 }, attr: { width: 400, height: 200 } })).toEqual(
+      expect(embedVideoService.embed_youtube('9XeNNqeHVDw', {query: {rel: 0, showinfo: 0}, attr: {width: 400, height: 200}})).toEqual(
         sanitizer.bypassSecurityTrustHtml('<iframe src="https://www.youtube.com/embed/9XeNNqeHVDw?rel=0&showinfo=0" width="400" height="200" frameborder="0" allowfullscreen></iframe>')
       )
     }));
@@ -106,7 +105,7 @@ describe('EmbedVideoService', () => {
   it('accepts query param vimeo',
     inject([EmbedVideoService, DomSanitizer], (embedVideoService, sanitizer) => {
 
-      expect(embedVideoService.embed_vimeo('19339941', { query: { portrait: 0, color: '333' } })).toEqual(
+      expect(embedVideoService.embed_vimeo('19339941', {query: {portrait: 0, color: '333'}})).toEqual(
         sanitizer.bypassSecurityTrustHtml('<iframe src="https://player.vimeo.com/video/19339941?portrait=0&color=333" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>')
       )
     }));
@@ -114,7 +113,7 @@ describe('EmbedVideoService', () => {
   it('accepts attributes vimeo',
     inject([EmbedVideoService, DomSanitizer], (embedVideoService, sanitizer) => {
 
-      expect(embedVideoService.embed_vimeo('19339941', { query: { portrait: 0, color: '333' }, attr: { width: 400, height: 200 } })).toEqual(
+      expect(embedVideoService.embed_vimeo('19339941', {query: {portrait: 0, color: '333'}, attr: {width: 400, height: 200}})).toEqual(
         sanitizer.bypassSecurityTrustHtml('<iframe src="https://player.vimeo.com/video/19339941?portrait=0&color=333" width="400" height="200" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>')
       )
     }));
@@ -122,7 +121,7 @@ describe('EmbedVideoService', () => {
   it('accepts query param dailymotion',
     inject([EmbedVideoService, DomSanitizer], (embedVideoService, sanitizer) => {
 
-      expect(embedVideoService.embed_dailymotion('x20qnej', { query: { autoPlay: 1, start: 66 } })).toEqual(
+      expect(embedVideoService.embed_dailymotion('x20qnej', {query: {autoPlay: 1, start: 66}})).toEqual(
         sanitizer.bypassSecurityTrustHtml('<iframe src="https://www.dailymotion.com/embed/video/x20qnej?autoPlay=1&start=66" frameborder="0" allowfullscreen></iframe>')
       )
     }));
@@ -130,7 +129,7 @@ describe('EmbedVideoService', () => {
   it('accepts attributes dailymotion',
     inject([EmbedVideoService, DomSanitizer], (embedVideoService, sanitizer) => {
 
-      expect(embedVideoService.embed_dailymotion('x20qnej', { query: { autoPlay: 1, start: 66 }, attr: { width: 400, height: 200 } })).toEqual(
+      expect(embedVideoService.embed_dailymotion('x20qnej', {query: {autoPlay: 1, start: 66}, attr: {width: 400, height: 200}})).toEqual(
         sanitizer.bypassSecurityTrustHtml('<iframe src="https://www.dailymotion.com/embed/video/x20qnej?autoPlay=1&start=66" width="400" height="200" frameborder="0" allowfullscreen></iframe>')
       )
     }));
@@ -147,7 +146,7 @@ describe('EmbedVideoService', () => {
   it('gets vimeo thumbnail with options',
     async(inject([EmbedVideoService], (embedVideoService) => {
 
-      embedVideoService.embed_image('https://vimeo.com/19339941', { image: 'thumbnail_small' }).then((image) => {
+      embedVideoService.embed_image('https://vimeo.com/19339941', {image: 'thumbnail_small'}).then((image) => {
         expect(image.link).toEqual('https://i.vimeocdn.com/video/122513613_100x75.jpg');
         expect(image.html).toEqual('<img src="https://i.vimeocdn.com/video/122513613_100x75.jpg"/>');
       });
@@ -156,7 +155,7 @@ describe('EmbedVideoService', () => {
   it('gets default vimeo thumbnail with invalid options',
     async(inject([EmbedVideoService], (embedVideoService) => {
 
-      embedVideoService.embed_image('https://vimeo.com/19339941', { image: 'stupid-format' }).then((image) => {
+      embedVideoService.embed_image('https://vimeo.com/19339941', {image: 'stupid-format'}).then((image) => {
         expect(image.link).toEqual('https://i.vimeocdn.com/video/122513613_640.jpg');
         expect(image.html).toEqual('<img src="https://i.vimeocdn.com/video/122513613_640.jpg"/>');
       });
@@ -165,7 +164,7 @@ describe('EmbedVideoService', () => {
   it('gets youtube thumbnail (prove backwards compatibility)',
     async(inject([EmbedVideoService], (embedVideoService) => {
 
-      embedVideoService.embed_image('https://youtu.be/ZeLnjXTNq6Q', { image: 'maxresdefault' }).then((image) => {
+      embedVideoService.embed_image('https://youtu.be/ZeLnjXTNq6Q', {image: 'maxresdefault'}).then((image) => {
         expect(image.link).toEqual('https://img.youtube.com/vi/ZeLnjXTNq6Q/maxresdefault.jpg');
         expect(image.html).toEqual('<img src="https://img.youtube.com/vi/ZeLnjXTNq6Q/maxresdefault.jpg"/>');
       });
@@ -183,7 +182,7 @@ describe('EmbedVideoService', () => {
   it('gets dailymotion thumbnail with options',
     async(inject([EmbedVideoService], (embedVideoService) => {
 
-      embedVideoService.embed_image('https://www.dailymotion.com/video/x20qnej_red-bull-presents-wild-ride-bmx-mtb-dirt_sport', { image: 'thumbnail_720_url' }).then((image) => {
+      embedVideoService.embed_image('https://www.dailymotion.com/video/x20qnej_red-bull-presents-wild-ride-bmx-mtb-dirt_sport', {image: 'thumbnail_720_url'}).then((image) => {
         expect(image.link).toEqual('http://s1.dmcdn.net/IgPVQ/x720-d_h.jpg');
         expect(image.html).toEqual('<img src="http://s1.dmcdn.net/IgPVQ/x720-d_h.jpg"/>');
       });
