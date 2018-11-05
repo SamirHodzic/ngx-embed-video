@@ -1,7 +1,7 @@
-import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {DomSanitizer} from '@angular/platform-browser';
-import {map} from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { DomSanitizer } from '@angular/platform-browser';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class EmbedVideoService {
@@ -129,7 +129,7 @@ export class EmbedVideoService {
       html: '<img src="' + src + '"/>'
     };
 
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       resolve(result);
     });
   }

@@ -8,6 +8,8 @@
 [![build-url][build-url-svg]][build-url]
 [![Dependencies][dependencies]][dependencies-url]
 
+Play with `ngx-embed-video` live on [stackblitz.com/ngx-embed-video-example](https://stackblitz.com/edit/ngx-embed-video-example).
+
 ## Installation
 
 To install ngx-embed-video library, run:
@@ -21,10 +23,13 @@ $ npm install ngx-embed-video --save
 and then in your Angular `AppModule`:
 
 ```typescript
+import { HttpClientModule } from '@angular/common/http';
 import { EmbedVideo } from 'ngx-embed-video';
 
 @NgModule({
   imports: [
+    HttpClientModule,
+
     EmbedVideo.forRoot()
   ]
 })
