@@ -56,11 +56,6 @@ export class EmbedVideoService {
 
   public embed_youtube(id: string, options?: any): string {
     options = this.parseOptions(options);
-    let queryString;
-
-    if (options && options.hasOwnProperty('query')) {
-      queryString = '?' + this.serializeQuery(options.query);
-    }
 
     return this.sanitize_iframe('<iframe src="https://www.youtube.com/embed/'
       + id + options.query + '"' + options.attr
@@ -69,11 +64,6 @@ export class EmbedVideoService {
 
   public embed_vimeo(id: string, options?: any): string {
     options = this.parseOptions(options);
-    let queryString;
-
-    if (options && options.hasOwnProperty('query')) {
-      queryString = '?' + this.serializeQuery(options.query);
-    }
 
     return this.sanitize_iframe('<iframe src="https://player.vimeo.com/video/'
       + id + options.query + '"' + options.attr
@@ -82,11 +72,6 @@ export class EmbedVideoService {
 
   public embed_dailymotion(id: string, options?: any): string {
     options = this.parseOptions(options);
-    let queryString;
-
-    if (options && options.hasOwnProperty('query')) {
-      queryString = '?' + this.serializeQuery(options.query);
-    }
 
     return this.sanitize_iframe('<iframe src="https://www.dailymotion.com/embed/video/'
       + id + options.query + '"' + options.attr
