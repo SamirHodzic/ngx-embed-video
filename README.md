@@ -1,6 +1,6 @@
 # ngx-embed-video
 
-> Get embed code for embedding youtube/vimeo/dailymotion/* video in websites from URL or ID in Angular 6+.
+> Get embed code for embedding youtube/vimeo/dailymotion/\* video in websites from URL or ID in Angular 6+.
 > Currently supports YouTube, Vimeo and Dailymotion. Feel free to make pull request to add others!
 
 [![npm-url][npm-url-svg]][npm-url]
@@ -27,11 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { EmbedVideo } from 'ngx-embed-video';
 
 @NgModule({
-  imports: [
-    HttpClientModule,
-
-    EmbedVideo.forRoot()
-  ]
+  imports: [HttpClientModule, EmbedVideo.forRoot()]
 })
 export class AppModule {}
 ```
@@ -46,20 +42,19 @@ import { EmbedVideoService } from 'ngx-embed-video';
 
 @Component({
   selector: 'app-component',
-  templateUrl: './template.html',
+  templateUrl: './template.html'
 })
 export class AppComponent {
-  vimeoUrl = "https://vimeo.com/197933516";
-  youtubeUrl = "https://www.youtube.com/watch?v=iHhcHTlGtRs";
-  dailymotionUrl = "https://www.dailymotion.com/video/x20qnej_red-bull-presents-wild-ride-bmx-mtb-dirt_sport";
+  vimeoUrl = 'https://vimeo.com/197933516';
+  youtubeUrl = 'https://www.youtube.com/watch?v=iHhcHTlGtRs';
+  dailymotionUrl =
+    'https://www.dailymotion.com/video/x20qnej_red-bull-presents-wild-ride-bmx-mtb-dirt_sport';
 
-  vimeoId = "197933516";
-  youtubeId = "iHhcHTlGtRs";
-  dailymotionId = "x20qnej";
+  vimeoId = '197933516';
+  youtubeId = 'iHhcHTlGtRs';
+  dailymotionId = 'x20qnej';
 
-  constructor(
-    private embedService: EmbedVideoService
-  ) {
+  constructor(private embedService: EmbedVideoService) {
     console.log(this.embedService.embed(this.vimeoUrl));
     console.log(this.embedService.embed(this.youtubeUrl));
     console.log(this.embedService.embed(this.dailymotionUrl));
@@ -74,13 +69,41 @@ export class AppComponent {
 Example output:
 
 ```html
-<iframe src="https://player.vimeo.com/video/197933516" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-<iframe src="https://www.youtube.com/embed/iHhcHTlGtRs" frameborder="0" allowfullscreen></iframe>
-<iframe src="https://www.dailymotion.com/embed/video/x20qnej" frameborder="0" allowfullscreen></iframe>
+<iframe
+  src="https://player.vimeo.com/video/197933516"
+  frameborder="0"
+  webkitallowfullscreen
+  mozallowfullscreen
+  allowfullscreen
+></iframe>
+<iframe
+  src="https://www.youtube.com/embed/iHhcHTlGtRs"
+  frameborder="0"
+  allowfullscreen
+></iframe>
+<iframe
+  src="https://www.dailymotion.com/embed/video/x20qnej"
+  frameborder="0"
+  allowfullscreen
+></iframe>
 
-<iframe src="https://player.vimeo.com/video/197933516" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-<iframe src="https://www.youtube.com/embed/iHhcHTlGtRs" frameborder="0" allowfullscreen></iframe>
-<iframe src="https://www.dailymotion.com/embed/video/x20qnej" frameborder="0" allowfullscreen></iframe>
+<iframe
+  src="https://player.vimeo.com/video/197933516"
+  frameborder="0"
+  webkitallowfullscreen
+  mozallowfullscreen
+  allowfullscreen
+></iframe>
+<iframe
+  src="https://www.youtube.com/embed/iHhcHTlGtRs"
+  frameborder="0"
+  allowfullscreen
+></iframe>
+<iframe
+  src="https://www.dailymotion.com/embed/video/x20qnej"
+  frameborder="0"
+  allowfullscreen
+></iframe>
 ```
 
 Example usage with sanitized innerHtml iframe:
@@ -104,7 +127,6 @@ export class AppComponent {
   )
 }
 ```
-
 
 ## Usage
 
@@ -130,8 +152,8 @@ Returns an HTML `<img>` tag (string) for the given url and the `link` in a callb
 
 ```js
 {
-  link: http://img.youtube.com/vi/iHhcHTlGtRs/default.jpg,
-  html: <img src="http://img.youtube.com/vi/iHhcHTlGtRs/default.jpg"/>
+  link: //img.youtube.com/vi/iHhcHTlGtRs/default.jpg,
+  http: html: <img src="http://img.youtube.com/vi/iHhcHTlGtRs/default.jpg" />;
 }
 ```
 
@@ -141,18 +163,26 @@ Returns an HTML `<img>` tag (string) for the given url and the `link` in a callb
 
 Object to be serialized as a querystring and appended to the embedded content url.
 
-
 #### Example
 
 ```typescript
-this.embedService.embed_vimeo("197933516", { query: { portrait: 0, color: '333' } })
+this.embedService.embed_vimeo('197933516', {
+  query: { portrait: 0, color: '333' }
+});
 ```
 
 Output:
 
 ```html
-<iframe src="https://player.vimeo.com/video/197933516?portrait=0&color=333" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe
+  src="https://player.vimeo.com/video/197933516?portrait=0&color=333"
+  frameborder="0"
+  webkitallowfullscreen
+  mozallowfullscreen
+  allowfullscreen
+></iframe>
 ```
+
 ### attributes
 
 Object to add additional attributes (any) to the iframe
@@ -160,56 +190,85 @@ Object to add additional attributes (any) to the iframe
 #### Example
 
 ```typescript
-this.embedService.embed('https://youtu.be/iHhcHTlGtRs', { query: { portrait: 0, color: '333' }, attr: { width: 400, height: 200 } })
+this.embedService.embed('https://youtu.be/iHhcHTlGtRs', {
+  query: { portrait: 0, color: '333' },
+  attr: { width: 400, height: 200 }
+});
 ```
 
 Output:
+
 ```html
-<iframe src="https://www.youtube.com/embed/iHhcHTlGtRs?portrait=0&color=333" frameborder="0" allowfullscreen width="400" height="200"></iframe>
+<iframe
+  src="https://www.youtube.com/embed/iHhcHTlGtRs?portrait=0&color=333"
+  frameborder="0"
+  allowfullscreen
+  width="400"
+  height="200"
+></iframe>
 ```
 
 #### Youtube Image options
 
-* default
-* mqdefault
-* hqdefault
-* sddefault
-* maxresdefault
+- default
+- mqdefault
+- hqdefault
+- sddefault
+- maxresdefault
 
 ```typescript
-this.embedService.embed_image('https://www.youtube.com/watch?v=iHhcHTlGtRs', { image: 'mqdefault' })
+this.embedService
+  .embed_image(
+    'https://www.youtube.com/watch?v=iHhcHTlGtRs', 
+    { image: 'mqdefault' }
+  )
+  .then(res => {
+    this.thumbnail = res.html;
+  });
 ```
 
 #### Vimeo Image options
 
-* thumbnail_small
-* thumbnail_medium
-* thumbnail_large
+- thumbnail_small
+- thumbnail_medium
+- thumbnail_large
 
 ```typescript
-this.embedService.embed_image('https://vimeo.com/197933516', { image: 'thumbnail_medium' })
+this.embedService
+  .embed_image(
+    'https://vimeo.com/197933516', 
+    { image: 'thumbnail_medium' }
+  )
+  .then(res => {
+    this.thumbnail = res.html;
+  });
 ```
 
 #### Dailymotion Image options
 
-* thumbnail_60_url
-* thumbnail_120_url
-* thumbnail_180_url
-* thumbnail_240_url
-* thumbnail_360_url
-* thumbnail_480_url
-* thumbnail_720_url
-* thumbnail_1080_url
+- thumbnail_60_url
+- thumbnail_120_url
+- thumbnail_180_url
+- thumbnail_240_url
+- thumbnail_360_url
+- thumbnail_480_url
+- thumbnail_720_url
+- thumbnail_1080_url
 
 ```typescript
-this.embedService.embed_image('https://www.dailymotion.com/video/x20qnej_red-bull-presents-wild-ride-bmx-mtb-dirt_sport', { image: 'thumbnail_720_url' })
+this.embedService
+  .embed_image(
+    'https://www.dailymotion.com/video/x20qnej_red-bull-presents-wild-ride-bmx-mtb-dirt_sport',
+    { image: 'thumbnail_720_url' }
+  )
+  .then(res => {
+    this.thumbnail = res.html;
+  });
 ```
-
 
 ## License
 
 MIT
-
 
 [build-url]: https://travis-ci.org/SamirHodzic/ngx-embed-video
 [build-url-svg]: https://travis-ci.org/SamirHodzic/ngx-embed-video.svg?branch=master
