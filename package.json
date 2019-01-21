@@ -8,6 +8,9 @@
     "tsc": "tsc",
     "test": "karma start"
   },
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/SamirHodzic/ngx-embed-video"
