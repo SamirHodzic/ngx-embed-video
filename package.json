@@ -1,6 +1,6 @@
 {
   "name": "ngx-embed-video",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "scripts": {
     "build": "ngc -p tsconfig.json",
     "lint": "tslint --force --project tsconfig.json src/*.ts",
