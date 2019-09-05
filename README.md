@@ -266,6 +266,12 @@ this.embedService
   });
 ```
 
+## Troubleshooting
+In Cordoba (or Ionic) mobile app, on iOS if you have a  blank frame instead of video iframe then you need to add ```allow-navigation``` configuration in ```config.xml```, for instance for YouTube: 
+```
+<allow-navigation href="https://*youtube.com/*"/>
+```
+
 ## License
 
 MIT
