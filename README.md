@@ -5,6 +5,7 @@
 
 [![npm-url][npm-url-svg]][npm-url]
 [![npm-url][down-url-svg]][npm-url]
+[![npm-url][down-url-dw-svg]][npm-url]
 [![build-url][build-url-svg]][build-url]
 [![Dependencies][dependencies]][dependencies-url]
 
@@ -273,6 +274,7 @@ MIT
 [build-url]: https://travis-ci.org/SamirHodzic/ngx-embed-video
 [build-url-svg]: https://travis-ci.org/SamirHodzic/ngx-embed-video.svg?branch=master
 [down-url-svg]: https://img.shields.io/npm/dt/ngx-embed-video.svg
+[down-url-dw-svg]: https://img.shields.io/npm/dw/ngx-embed-video.svg
 [dependencies]: https://david-dm.org/samirhodzic/ngx-embed-video.svg
 [dependencies-url]: https://david-dm.org/samirhodzic/ngx-embed-video
 [npm-url-svg]: https://img.shields.io/npm/v/ngx-embed-video.svg
