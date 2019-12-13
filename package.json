@@ -1,6 +1,6 @@
 {
   "name": "ngx-embed-video",
-  "version": "1.0.4",
+  "version": "1.1.4",
   "scripts": {
     "build": "ngc -p tsconfig.json",
     "lint": "tslint --force --project tsconfig.json src/*.ts",
@@ -22,16 +22,17 @@
   "keywords": [
     "typescript",
     "angular",
-    "angular6",
+    "angular8",
+    "ng",
     "ng6",
     "ngx",
     "embed-video",
     "embed",
-    "typescript",
     "youtube",
     "vimeo",
     "dailymotion",
-    "video"
+    "video",
+    "iframe"
   ],
   "license": "MIT",
   "bugs": {
@@ -39,23 +40,23 @@
   },
   "main": "./dist/index.js",
   "peerDependencies": {
-    "@angular/core": "^6.0.0",
-    "@angular/common": "^6.0.0"
+    "@angular/core": "^6.0.0"
   },
   "devDependencies": {
-    "@angular/common": "^6.1.10",
-    "@angular/compiler": "^6.1.10",
-    "@angular/compiler-cli": "^6.1.10",
-    "@angular/core": "^6.1.10",
-    "@angular/http": "^6.1.10",
-    "@angular/platform-browser": "^6.1.10",
-    "@angular/platform-browser-dynamic": "^6.1.10",
-    "@angular/platform-server": "^6.1.10",
+    "@angular/animations": "^8.2.14",
+    "@angular/common": "^8.2.14",
+    "@angular/compiler": "^8.2.14",
+    "@angular/compiler-cli": "^8.2.14",
+    "@angular/core": "^8.2.14",
+    "@angular/http": "^7.2.15",
+    "@angular/platform-browser": "^8.2.14",
+    "@angular/platform-browser-dynamic": "^8.2.14",
+    "@angular/platform-server": "^8.2.14",
     "@types/jasmine": "^2.8.9",
     "codelyzer": "^4.5.0",
     "core-js": "^2.5.7",
     "jasmine-core": "^2.99.1",
-    "karma": "^1.7.0",
+    "karma": "^4.4.1",
     "karma-chrome-launcher": "^2.2.0",
     "karma-jasmine": "^1.1.2",
     "karma-sourcemap-loader": "^0.3.7",
@@ -66,9 +67,9 @@
     "ts-helpers": "^1.1.2",
     "ts-loader": "^2.0.3",
     "tslint": "^5.11.0",
-    "typescript": "^2.9.2",
+    "typescript": "^3.5.3",
     "webpack": "^2.3.1",
-    "zone.js": "^0.8.26"
+    "zone.js": "^0.9.1"
   },
   "engines": {
     "node": ">=0.8.0"
