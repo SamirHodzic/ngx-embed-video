@@ -23,3 +23,6 @@ Desktop.ini
 
 # Ngc generated files
 **/*.ngfactory.ts
+
+# swp files
+*.swp

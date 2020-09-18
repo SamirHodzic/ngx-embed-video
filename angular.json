@@ -1,0 +1,47 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "ngx-embed-video": {
+      "projectType": "library",
+      "root": "projects/ngx-embed-video",
+      "sourceRoot": "projects/ngx-embed-video/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/ngx-embed-video/tsconfig.lib.json",
+            "project": "projects/ngx-embed-video/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-embed-video/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-embed-video/src/test.ts",
+            "tsConfig": "projects/ngx-embed-video/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-embed-video/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-embed-video/tsconfig.lib.json",
+              "projects/ngx-embed-video/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }},
+  "defaultProject": "ngx-embed-video"
+}

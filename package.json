@@ -1,76 +1,46 @@
 {
-  "name": "ngx-embed-video",
-  "version": "1.0.4",
+  "name": "libraries",
+  "version": "0.0.0",
   "scripts": {
-    "build": "ngc -p tsconfig.json",
-    "lint": "tslint --force --project tsconfig.json src/*.ts",
-    "prepublish": "tsc",
-    "tsc": "tsc",
-    "test": "karma start"
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint"
   },
-  "files": [
-    "dist"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/SamirHodzic/ngx-embed-video"
-  },
-  "author": {
-    "name": "SamirHodzic",
-    "email": "samir.sgd@gmail.com"
-  },
-  "keywords": [
-    "typescript",
-    "angular",
-    "angular6",
-    "ng6",
-    "ngx",
-    "embed-video",
-    "embed",
-    "typescript",
-    "youtube",
-    "vimeo",
-    "dailymotion",
-    "video"
-  ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/SamirHodzic/ngx-embed-video/issues"
-  },
-  "main": "./dist/index.js",
-  "peerDependencies": {
-    "@angular/core": "^10.1.2",
-    "@angular/common": "^10.1.2"
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "~10.1.2",
+    "@angular/common": "~10.1.2",
+    "@angular/compiler": "~10.1.2",
+    "@angular/core": "~10.1.2",
+    "@angular/forms": "~10.1.2",
+    "@angular/platform-browser": "~10.1.2",
+    "@angular/platform-browser-dynamic": "~10.1.2",
+    "@angular/router": "~10.1.2",
+    "rxjs": "~6.6.0",
+    "tslib": "^2.0.0",
+    "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "@angular/common": "^10.1.2",
-    "@angular/compiler": "^10.1.2",
-    "@angular/compiler-cli": "^10.1.2",
-    "@angular/core": "^6.1.10",
-    "@angular/http": "^6.1.10",
-    "@angular/platform-browser": "^10.1.2",
-    "@angular/platform-browser-dynamic": "^10.1.2",
-    "@angular/platform-server": "^10.1.2",
-    "@types/jasmine": "^3.5.14",
+    "@angular-devkit/build-angular": "~0.1001.2",
+    "@angular/cli": "~10.1.2",
+    "@angular/compiler-cli": "~10.1.2",
+    "@types/node": "^12.11.1",
+    "@types/jasmine": "~3.5.0",
+    "@types/jasminewd2": "~2.0.3",
     "codelyzer": "^6.0.0",
-    "core-js": "^3.6.5",
-    "jasmine-core": "^3.6.0",
-    "karma": "^5.2.2",
-    "karma-chrome-launcher": "^3.1.0",
-    "karma-jasmine": "^4.0.1",
-    "karma-sourcemap-loader": "^0.3.8",
-    "karma-spec-reporter": "^0.0.32",
-    "karma-webpack": "^4.0.2",
-    "rxjs": "^6.6.3",
-    "rxjs-compat": "^6.6.3",
-    "ts-helpers": "^1.1.2",
-    "ts-loader": "^8.0.3",
-    "tslint": "^6.1.3",
-    "typescript": "^4.0.3",
-    "webpack": "^4.44.2",
-    "zone.js": "^0.11.1"
-  },
-  "engines": {
-    "node": ">=0.8.0"
+    "jasmine-core": "~3.6.0",
+    "jasmine-spec-reporter": "~5.0.0",
+    "karma": "~5.0.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage-istanbul-reporter": "~3.0.2",
+    "karma-jasmine": "~4.0.0",
+    "karma-jasmine-html-reporter": "^1.5.0",
+    "ng-packagr": "^10.1.0",
+    "protractor": "~7.0.0",
+    "ts-node": "~8.3.0",
+    "tslint": "~6.1.0",
+    "typescript": "~4.0.2"
   }
 }

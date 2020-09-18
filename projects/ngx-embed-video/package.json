@@ -1,0 +1,11 @@
+{
+  "name": "ngx-embed-video",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^10.1.2",
+    "@angular/core": "^10.1.2"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  }
+}

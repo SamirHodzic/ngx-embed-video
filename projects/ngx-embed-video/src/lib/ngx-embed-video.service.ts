@@ -4,7 +4,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { map } from 'rxjs/operators';
 
 @Injectable()
-export class EmbedVideoService {
+export class NgxEmbedVideoService {
   private validYouTubeOptions = [
     'default',
     'mqdefault',
