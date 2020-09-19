@@ -1,0 +1,12 @@
+language: node_js
+sudo: required
+node_js:
+  - '7'
+script:
+  - npm run lint
+  - npm test
+services:
+  - xvfb
+before_script:
+  - export DISPLAY=:99.0
+  - sleep 3
