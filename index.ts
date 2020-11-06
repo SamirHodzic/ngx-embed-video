@@ -12,7 +12,7 @@ export * from './src/embed-video.service';
 	providers: [EmbedVideoService]
 })
 export class EmbedVideo {
-	static forRoot(): ModuleWithProviders {
+	static forRoot(): ModuleWithProviders<EmbedVideo> {
 		return {
 			ngModule: EmbedVideo,
 			providers: [EmbedVideoService]
