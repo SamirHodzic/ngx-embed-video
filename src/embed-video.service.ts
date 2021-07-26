@@ -203,7 +203,13 @@ export class EmbedVideoService {
 
   private detectYoutube(url: any): string {
     if (url.hostname.indexOf('youtube.com') > -1) {
-      return url.search.split('=')[1];
+      var video_id = url.search.split('v=')[1];
+      var ampersandPosition = video_id.indexOf('&');
+      if(ampersandPosition != -1) {
+        video_id = video_id.substring(0, ampersandPosition);
+      }
+
+      return video_id;
     }
 
     if (url.hostname === 'youtu.be') {
